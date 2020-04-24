@@ -14,7 +14,7 @@
             var games = GenerateGames(numberOfGames);
             var results = games.Select(g => g.Play(switchDoor));
 
-            return new SimulationResult(now, results);
+            return new SimulationResult(now, switchDoor, results);
         }
 
         private IEnumerable<IGame> GenerateGames(int numberOfGames)
