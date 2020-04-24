@@ -1,9 +1,9 @@
 ﻿namespace Monty.Simulations
 {
-    public interface IGame
+    public interface IGameResult
     {
         int Id { get; }
 
-        IGameResult Play(bool switchDoor);
+        bool Win { get; }
     }
 }
