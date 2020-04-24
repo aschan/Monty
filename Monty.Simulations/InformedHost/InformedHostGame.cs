@@ -19,10 +19,8 @@
             var luckyDoor = _randomGenerator.Next(1, 4);
             var selectedDoor = _randomGenerator.Next(1, 4);
             var result = (selectedDoor == luckyDoor && !switchDoor) || (selectedDoor != luckyDoor && switchDoor);
-
-            //System.Diagnostics.Debug.WriteLine($"{Id,-7} Selected: {selectedDoor} Lucky: {luckyDoor} Switch: {(switchDoor ? "Y" : "N")} Win: {(result ? "Y" : "N")}");
-
-            return new GameResult(Id, result);
+                
+            return new GameResult(Id, switchDoor, result);
         }
     }
 }

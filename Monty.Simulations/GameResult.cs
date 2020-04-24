@@ -2,9 +2,10 @@
 {
     public class GameResult : IGameResult
     {
-        public GameResult(int id, bool won)
+        public GameResult(int id, bool switchedDoor, bool won)
         {
             Id = id;
+            SwitchedDoor = switchedDoor;
             Won = won;
         }
 
