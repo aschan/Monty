@@ -12,7 +12,7 @@
         {
             var now = DateTimeOffset.UtcNow;
             var games = GenerateGames(numberOfGames);
-            var results = games.AsParallel().AsOrdered().Select(g => g.Play(switchDoor));
+            var results = games.AsParallel().AsOrdered().Select(g => g.Play(switchDoor)).ToList();
 
             return new SimulationResult(now, results);
         }

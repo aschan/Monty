@@ -2,14 +2,16 @@
 {
     public class GameResult : IGameResult
     {
-        public GameResult(int id, bool win)
+        public GameResult(int id, bool won)
         {
             Id = id;
-            Win = win;
+            Won = won;
         }
 
         public int Id { get; }
 
-        public bool Win { get; }
+        public bool SwitchedDoor { get; }
+
+        public bool Won { get; }
     }
 }
