@@ -6,13 +6,16 @@
 
     public class SimulationResult : ISimulationResult
     {
-        public SimulationResult(DateTimeOffset executionDate, IEnumerable<IGameResult> results)
+        public SimulationResult(DateTimeOffset executionDate, bool switchDoor, IEnumerable<IGameResult> results)
         {
             ExecutionDate = executionDate;
+            SwitchDoor = switchDoor;
             GameResults = results ?? throw new ArgumentNullException(nameof(results));
         }
  
         public int NumberOfGames => GameResults.Count();
+
+        public bool SwitchDoor { get; }
 
         public decimal WinPercentage => 100 * (GameResults.Count(r => r.Won) / (decimal)NumberOfGames);
 

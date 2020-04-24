@@ -7,6 +7,8 @@
     {
         int NumberOfGames { get; }
 
+        bool SwitchDoor { get;  }
+
         decimal WinPercentage { get; }
 
         DateTimeOffset ExecutionDate { get; }
