@@ -1,31 +1,38 @@
 ﻿namespace Monty.SmokeTest
 {
-    using Monty.Simulations;
-    using Monty.Simulations.InformedHost;
     using System;
+    using System.Diagnostics;
+    using System.Threading.Tasks;
+
+    using Monty.Simulations.InformedHost;
 
     internal static class Program
     {
-        internal static void Main(string[] args)
+        internal static async Task Main(string[] args)
         {
-            var numberOfGames = 1000;
-            var switchingDoorsResult = SimulateSwitchingDoors(numberOfGames);
-            var notSwitchingDoorsResult = SimulateNotSwitchingDoors(numberOfGames);
-
-            Console.WriteLine($"When switching doors the contestant wins {switchingDoorsResult.WinPercentage} percent of the games.");
-            Console.WriteLine($"When not switching doors the contestant wins {notSwitchingDoorsResult.WinPercentage} percent of the games.");
+            var numberOfGames = int.MaxValue / 8;
+            await SimulateSwitchingDoorsAsync(numberOfGames).ConfigureAwait(false);
+            await SimulateNotSwitchingDoorsAsync(numberOfGames).ConfigureAwait(false);
         }
 
-        internal static ISimulationResult SimulateSwitchingDoors(int numberOfGames)
+        internal static async Task SimulateSwitchingDoorsAsync(int numberOfGames)
         {
             var simulation = new InformedHostSimulation();
-            return simulation.Run(numberOfGames, true);
+            var stopwatch = Stopwatch.StartNew();
+            var result = await Task.Run(() => simulation.Run(numberOfGames, true)).ConfigureAwait(false);
+            Console.WriteLine($"When switching doors the contestant wins {result.WinPercentage} percent of the games.");
+            stopwatch.Stop();
+            Console.WriteLine($"Simulated {numberOfGames} games in {stopwatch.ElapsedMilliseconds} ms");
         }
 
-        internal static ISimulationResult SimulateNotSwitchingDoors(int numberOfGames)
+        internal static async Task SimulateNotSwitchingDoorsAsync(int numberOfGames)
         {
             var simulation = new InformedHostSimulation();
-            return simulation.Run(numberOfGames, false);
+            var stopwatch = Stopwatch.StartNew();
+            var result = await Task.Run(() => simulation.Run(numberOfGames, false)).ConfigureAwait(false);
+            Console.WriteLine($"When not switching doors the contestant wins {result.WinPercentage} percent of the games.");
+            stopwatch.Stop();
+            Console.WriteLine($"Simulated {numberOfGames} games in {stopwatch.ElapsedMilliseconds} ms");
         }
     }
 }
