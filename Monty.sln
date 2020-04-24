@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monty.Simulations", "Monty.Simulations\Monty.Simulations.csproj", "{F4D469C6-4796-41B4-AA5C-9E06D1A1F7DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monty.Simulations", "Monty.Simulations\Monty.Simulations.csproj", "{F4D469C6-4796-41B4-AA5C-9E06D1A1F7DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monty.SmokeTest", "Monty.SmokeTest\Monty.SmokeTest.csproj", "{C5022310-5708-4E91-9FA2-5CA90809DD20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monty.SmokeTest", "Monty.SmokeTest\Monty.SmokeTest.csproj", "{C5022310-5708-4E91-9FA2-5CA90809DD20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monty.AzureFunctions", "Monty.AzureFunctions\Monty.AzureFunctions.csproj", "{C734F6E3-87B6-4D2C-B924-F1C221B761B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C5022310-5708-4E91-9FA2-5CA90809DD20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5022310-5708-4E91-9FA2-5CA90809DD20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5022310-5708-4E91-9FA2-5CA90809DD20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C734F6E3-87B6-4D2C-B924-F1C221B761B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C734F6E3-87B6-4D2C-B924-F1C221B761B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C734F6E3-87B6-4D2C-B924-F1C221B761B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C734F6E3-87B6-4D2C-B924-F1C221B761B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
