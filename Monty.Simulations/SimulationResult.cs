@@ -14,7 +14,7 @@
  
         public int NumberOfGames => GameResults.Count();
 
-        public decimal WinPercentage => GameResults.Count(r => r.Win) / (decimal)NumberOfGames;
+        public decimal WinPercentage => 100 * (GameResults.Count(r => r.Won) / (decimal)NumberOfGames);
 
         public DateTimeOffset ExecutionDate { get; }
 

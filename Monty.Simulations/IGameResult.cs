@@ -4,6 +4,8 @@
     {
         int Id { get; }
 
-        bool Win { get; }
+        bool SwitchedDoor { get; }
+
+        bool Won { get; }
     }
 }
