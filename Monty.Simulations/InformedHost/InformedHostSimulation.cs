@@ -12,14 +12,17 @@
         {
             var now = DateTimeOffset.UtcNow;
             var games = GenerateGames(numberOfGames);
-            var results = games.AsParallel().AsOrdered().Select(g => g.Play(switchDoor)).ToList();
+            var results = games.Select(g => g.Play(switchDoor));
 
             return new SimulationResult(now, results);
         }
 
         private IEnumerable<IGame> GenerateGames(int numberOfGames)
         {
-            return Enumerable.Range(1, numberOfGames).Select(i => new InformedHostGame(i, _randomGenerator));
+            foreach (var id in Enumerable.Range(1, numberOfGames))
+            {
+                yield return new InformedHostGame(id, _randomGenerator);
+            }
         }
     }
 }
