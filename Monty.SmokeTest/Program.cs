@@ -10,7 +10,13 @@
     {
         internal static async Task Main(string[] args)
         {
-            var numberOfGames = int.MaxValue / 8;
+            //var numberOfGames = int.MaxValue / 65536;
+            //var numberOfGames = int.MaxValue / 4096;
+            //var numberOfGames = int.MaxValue / 256;
+            //var numberOfGames = int.MaxValue / 16;
+            //var numberOfGames = int.MaxValue / 4;
+            //var numberOfGames = int.MaxValue;
+            var numberOfGames = 2;
             await SimulateSwitchingDoorsAsync(numberOfGames).ConfigureAwait(false);
             await SimulateNotSwitchingDoorsAsync(numberOfGames).ConfigureAwait(false);
         }
